@@ -1,3 +1,146 @@
-<html>
-    
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body {
+        margin-left:auto;
+        margin-right:auto;
+        padding-top:10px;
+        max-width:600px;
+    }
+    .section-title {
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    .pub {
+        border: 1px solid black;
+        margin-bottom: 5px;
+    }
+    .pub>div{
+        margin: 10px;
+    }
+    .pub-text {
+        width: 75%;
+    }
+    .pub-subtitle {
+        font-size: 15px;
+    }
+    .pub-abstract {
+        font-size: 15px;
+        text-indent: 10px;
+    }
+    .more {display: none;}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamer's Webpage</title>
+
+    <script>
+        function more(id) {
+            var dots = document.getElementById("dots-"+id);
+            var moreText = document.getElementById("more-"+id);
+            var btnText = document.getElementById("myBtn-"+id);
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "Read more"; 
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = " Read less"; 
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div>
+        Hi! <br>
+        I am a postdoctoral researcher in computer science at the CIFRA lab at Bocconi University, hosted by Prof. Alon Rosen. <br><br>
+
+        I recently obtained my PhD from the Weizmann Institute of Science under the supervision of Prof. Zvika Brakreski.
+        Before that, I  have received my Matser's degree in Technion, under the supervision of Prof. Eyal Kushilevitz. <br><br>
+
+        Despite cryptography being my main focus in my graduate studies, I am generally interested in modelling and solving problems that arise in societal interactions, via theoretical computer science and math. <br>
+    </div>
+
+    <div class="section-title"> <b> Research Work </b> </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Locally Testable Tree Codes</b> <br>
+            <i class="pub-subtitle"> with Alon Rosen and Ron Rothblum</i><br>
+            <p class="pub-abstract">
+                Suppose we wish to encode a huge amount of data that is created across
+                multiple generations. Each generation creates new information and we would 
+                like to encode it in an online manner into a repository<span id="dots-mrr">... </span><span id="more-mrr" class="more">. We want 
+                the encoding to be such that we can still decode and retrieve the information
+                even if few errors happened along the way. Further, we want to be able to test
+                that the stored data is properly encoded by reading only a few locations in the
+                (potentially huge) repository. In this work, we build the first locally testable
+                tree codes, which offer a solution to such a scenario.</span><a href="javascript:more('mrr')" id="myBtn-mrr"> Read more</a>
+            </p>
+        </div>
+        <div class="pub-icon">
+
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">The Black-Box Complexity of Correlation Intractability</b> <br>
+            <i class="pub-subtitle"> with Nico D&ouml;ttling, appeared in ITCS'23</i><br>
+            <p class="pub-abstract">
+
+            </p>
+        </div>
+        <div class="pub-icon">
+
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Non-Interactive Zero Knowledge from LPN and Trapdoor Hash</b> <br>
+            <i class="pub-subtitle"> with Zvika Brakerski and Venkata Koppula, appeared in CRYPTO'20</i><br>
+            <p class="pub-abstract">
+                Imagine you want to prove a computational statement over some secret 
+                (e.g. a password) without leaking any information about the secret. You also want
+                to do so by sending a <q>one-shot proof</q><span id="dots-bkm">... </span><span id="more-bkm" class="more">, without any interaction with a verifier.
+                Non-interactive zero knowledge (NIZK) proofs are the tool to accomplish this cryptographic
+                task. In this work, we <q>lower the bar</q> for the cryptographic structure needed to
+                build NIZKs. Specifically, we build such proofs where security is based on the LPN and
+                DDH assumptions, which encompass much weaker structure than the assumptions known to imply
+                NIZKs before, e.g. LWE or QR.</span><a href="javascript:more('bkm')" id="myBtn-bkm"> Read more</a>
+            </p>
+        </div>
+        <div class="pub-icon">
+            
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Trapdoor Hash Functions and Their Applicatoins</b> <br>
+            <i class="pub-subtitle"> with Nico D&ouml;ttling, Sanjam Garg, Yuval Ishai, Giulio Malavolta and Rafail Ostrovsky, appearead in CRYPTO'19</i><br>
+        </div>
+        <div class="pub-icon">
+
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Distributed Oblivious RAM with Small Block Size</b> <br>
+            <i class="pub-subtitle"> with Eyal Kushilevitz, appeared in PKC'19</i><br>
+        </div>
+        <div class="pub-icon">
+
+        </div>
+    </div>
+</body>
 </html>
