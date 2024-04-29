@@ -1,1 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<style>
+    body {
+        margin-left:auto;
+        margin-right:auto;
+        padding-top:10px;
+        max-width:600px;
+    }
+    .title {
+        font-size: 35px;
+        text-align: center;
+        padding: 10px;
+    }
+    .section-title {
+        font-size: 20px;
+        text-align: center;
+        padding: 10px;
+    }
+    .profile-text {
+        margin-left: 30px;
+        width: 70%;
+    }
+    .profile {
+        display: flex;
+    }
+    .profile-img {
+        width: 20%;
+    }
+    .profile-pic {
+        max-width: 100%;
+    }
+    .pub {
+        display: flex;
+        border: 1px solid black;
+        margin-bottom: 5px;
+    }
+    .pub>div{
+        margin: 10px;
+    }
+    .pub-text {
+        width: 75%;
+    }
+    .pub-subtitle {
+        font-size: 15px;
+    }
+    .pub-abstract {
+        font-size: 15px;
+        text-indent: 10px;
+    }
+    .pub-img {
+        width: 20%;
+    }
+    .pub-icon {
+        max-width: 100%;
+    }
+    .more {display: none;}
+</style>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tamer's Webpage</title>
+
+    <script>
+        function more(id) {
+            var dots = document.getElementById("dots-"+id);
+            var moreText = document.getElementById("more-"+id);
+            var btnText = document.getElementById("myBtn-"+id);
+
+            if (dots.style.display === "none") {
+                dots.style.display = "inline";
+                btnText.innerHTML = "more"; 
+                moreText.style.display = "none";
+            } else {
+                dots.style.display = "none";
+                btnText.innerHTML = " less"; 
+                moreText.style.display = "inline";
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div class="title">
+        <b> Tamer Mour's Homepage </b><br>
+        <span style="font-size: 15px;">Last updated: April 29, 2024</span>
+    </div>
+    <hr>
+
+    <div class="profile">
+        <div class="profile-img">
+            <img src="static/profile-pic.png" class="profile-pic">
+        </div>
+        <div class="profile-text">
+            <b> Academic Profile </b><br>
+            I am a postdoctoral researcher in computer science at the CIFRA lab at Bocconi University, hosted by Prof. Alon Rosen. <br><br>
+
+            I recently obtained my PhD from the Weizmann Institute of Science under the supervision of Prof. Zvika Brakreski.
+            Before that, I received my Matser's degree in Technion, under the supervision of Prof. Eyal Kushilevitz. <br><br>
+
+            Despite cryptography being my main focus in my graduate studies, I am generally interested in modelling and solving problems that arise in societal interactions, via theoretical computer science and math. <br><br>
+            
+            <a href="./cv.pdf">cv.pdf</a> | e-mail: [firstname].[lastname]@unibocconi.it
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="section-title">
+        <b> Research Work </b><br>
+        <span style="font-size: 15px;">Chronological order, see also my <a href="https://dblp.org/pid/215/4408.html">dblp</a> or <a href="https://scholar.google.com/citations?user=bkXNq-UAAAAJ&hl=en">Google Scholar</a> page.</span>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Locally Testable Tree Codes</b> <br>
+            <i class="pub-subtitle"> with Alon Rosen and Ron Rothblum</i><br>
+            <p class="pub-abstract">
+                Suppose we wish to encode a huge amount of data that is created across
+                multiple generations. Each generation creates new information and we would 
+                like to encode it in an online manner into a repository<span id="dots-mrr">... </span><span id="more-mrr" class="more">. We want 
+                the encoding to be such that we can still decode and retrieve the information
+                even if few errors happened along the way. Further, we want to be able to test
+                that the stored data is properly encoded by reading only a few locations in the
+                (potentially huge) repository. In this work, we build the first locally testable
+                tree codes, which offer a solution to such a scenario.</span><a href="javascript:more('mrr')" id="myBtn-mrr"> more</a>
+            </p>
+            Paper
+        </div>
+        <div class="pub-img">
+            <img src="static/mrr.png" class="pub-icon">
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">The Black-Box Complexity of Correlation Intractability</b> <br>
+            <i class="pub-subtitle"> with Nico D&ouml;ttling, appeared in ITCS'23</i><br>
+            <p class="pub-abstract">
+                Correlation intractable hash functions are functions where it is hard to find an input-output pair satisfying
+                some desired correlation. Such functions are a central tool in communication-efficient<span id="dots-dm">... </span><span id="more-dm" class="more">
+                cryptographic protocols. In this work, we investigate the complexity of building correlation intractable hash functions from
+                basic cryptographic building blocks: one-way functions, i.e. functions that are hard to invert, or collision-resistant
+                hash functions, i.e. functions under which it is hard to find two colliding inputs.
+                </span><a href="javascript:more('dm')" id="myBtn-dm"> more</a>
+            </p>
+            <a href="https://eprint.iacr.org/2023/1365">Paper</a> | <a href="https://youtu.be/ipNQIl95ep0?si=mUqLgI5XfOh7TCAH">Talk</a>
+        </div>
+        <div class="pub-img">
+            <img src="static/dm.png" class="pub-icon">
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Non-Interactive Zero Knowledge from LPN and Trapdoor Hash</b> <br>
+            <i class="pub-subtitle"> with Zvika Brakerski and Venkata Koppula, appeared in CRYPTO'20</i><br>
+            <p class="pub-abstract">
+                Imagine you want to prove a computational statement over some secret 
+                (e.g. a password) without leaking any information about the secret. You also want
+                to do so by sending a <q>one-shot proof</q><span id="dots-bkm">... </span><span id="more-bkm" class="more">, without any interaction with a verifier.
+                Non-interactive zero knowledge (NIZK) proofs are the tool to accomplish this cryptographic
+                task. In this work, we <q>lower the bar</q> for the cryptographic structure needed to
+                build NIZKs. Specifically, we build such proofs where security is based on the LPN and
+                DDH assumptions, which encompass much weaker structure than the assumptions known to imply
+                NIZKs before, e.g. LWE, QR or Factoring.</span><a href="javascript:more('bkm')" id="myBtn-bkm"> more</a>
+            </p>
+            <a href="https://eprint.iacr.org/2020/258">Paper</a> | <a href="https://youtu.be/VID_4W24BS4?si=4nwzf8aOBCoJ0IDf">Short Talk</a> | <a href="https://youtu.be/wCVR3dWDBB4?si=2WEu674TEr8ZPEfO">Long Talk</a>
+        </div>
+        <div class="pub-img">
+            <img src="static/bkm.png" class="pub-icon">
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Trapdoor Hash Functions and Their Applications</b> <br>
+            <i class="pub-subtitle"> with Nico D&ouml;ttling, Sanjam Garg, Yuval Ishai, Giulio Malavolta and Rafail Ostrovsky, appearead in CRYPTO'19</i><br>
+            <p>
+                One of the main goals in the design of secure computation protocols is to reduce the communication cost needed for privacy. In<span id="dots-dgimmo">... </span><span id="more-dgimmo" class="more">
+                this work, we introduce a new cryptographic building block, which we call trapdoor hash functions, that allows to build communication-efficient
+                protocols for prominent cryptographic functionalities, e.g. oblivious transfer and private information retreival.</span><a href="javascript:more('dgimmo')" id="myBtn-dgimmo"> more</a>
+            </p>
+            <a href="https://eprint.iacr.org/2019/639.pdf">Paper</a> | <a href="https://youtu.be/plvBmEnxCHQ?si=pUDHTHun72iH-lIG">Talk</a>
+        </div>
+        <div class="pub-img">
+            <img src="static/dgimmo.png" class="pub-icon">
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">New Efficient Constructions for Distributed Oblivious RAM</b> <br>
+            <i class="pub-subtitle"> with Eyal Kushilevitz, appeared in PKC'19</i><br>
+            <p class="pub-abstract">
+                Consider the problem of privately outsourcing a database to remote server(s). While encryption can be used
+                to hide the data itself, one must use oblivious RAM to hide the access pattern to the data. In this<span id="dots-km">... </span><span id="more-km" class="more"> work, we
+                make progress in constructing efficient oblivious RAM protocols where the database is stored in two or more
+                servers.</span><a href="javascript:more('km')" id="myBtn-km"> more</a>
+            </p>
+            <a href="https://www.iacr.org/archive/pkc2019/114420180/114420180.pdf">Paper</a>
+        </div>
+        <div class="pub-img">
+            <img src="static/km.png" class="pub-icon">
+        </div>
+    </div>
+</body>
+</html>
