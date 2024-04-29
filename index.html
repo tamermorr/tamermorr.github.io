@@ -14,6 +14,7 @@
         padding: 10px;
     }
     .pub {
+        display: flex;
         border: 1px solid black;
         margin-bottom: 5px;
     }
@@ -29,6 +30,12 @@
     .pub-abstract {
         font-size: 15px;
         text-indent: 10px;
+    }
+    .pub-img {
+        width: 20%;
+    }
+    .pub-icon {
+        max-width: 100%;
     }
     .more {display: none;}
 </style>
@@ -47,11 +54,11 @@
 
             if (dots.style.display === "none") {
                 dots.style.display = "inline";
-                btnText.innerHTML = "Read more"; 
+                btnText.innerHTML = "more"; 
                 moreText.style.display = "none";
             } else {
                 dots.style.display = "none";
-                btnText.innerHTML = " Read less"; 
+                btnText.innerHTML = " less"; 
                 moreText.style.display = "inline";
             }
         }
@@ -82,11 +89,12 @@
                 even if few errors happened along the way. Further, we want to be able to test
                 that the stored data is properly encoded by reading only a few locations in the
                 (potentially huge) repository. In this work, we build the first locally testable
-                tree codes, which offer a solution to such a scenario.</span><a href="javascript:more('mrr')" id="myBtn-mrr"> Read more</a>
+                tree codes, which offer a solution to such a scenario.</span><a href="javascript:more('mrr')" id="myBtn-mrr"> more</a>
             </p>
+            Paper
         </div>
-        <div class="pub-icon">
-
+        <div class="pub-img">
+            <img src="static/mrr.png" class="pub-icon">
         </div>
     </div>
 
@@ -95,11 +103,17 @@
             <b class="pub-title">The Black-Box Complexity of Correlation Intractability</b> <br>
             <i class="pub-subtitle"> with Nico D&ouml;ttling, appeared in ITCS'23</i><br>
             <p class="pub-abstract">
-
+                Correlation intractable hash functions are functions where it is hard to find an input-output pair satisfying
+                some desired correlation. Such functions are a central tool in communication-efficient<span id="dots-dm">... </span><span id="more-dm" class="more">
+                cryptographic protocols. In this work, we investigate the complexity of building correlation intractable hash functions from
+                basic cryptographic building blocks: one-way functions, i.e. functions that are hard to invert, or collision-resistant
+                hash functions, i.e. functions under which it is hard to find two colliding inputs.
+                </span><a href="javascript:more('dm')" id="myBtn-dm"> more</a>
             </p>
+            <a href="https://eprint.iacr.org/2023/1365">Paper</a> | Talk
         </div>
-        <div class="pub-icon">
-
+        <div class="pub-img">
+            <img src="static/dm.png" class="pub-icon">
         </div>
     </div>
 
@@ -115,11 +129,12 @@
                 task. In this work, we <q>lower the bar</q> for the cryptographic structure needed to
                 build NIZKs. Specifically, we build such proofs where security is based on the LPN and
                 DDH assumptions, which encompass much weaker structure than the assumptions known to imply
-                NIZKs before, e.g. LWE or QR.</span><a href="javascript:more('bkm')" id="myBtn-bkm"> Read more</a>
+                NIZKs before, e.g. LWE, QR or Factoring.</span><a href="javascript:more('bkm')" id="myBtn-bkm"> more</a>
             </p>
+            <a href="https://eprint.iacr.org/2020/258">Paper</a> | Talk
         </div>
-        <div class="pub-icon">
-            
+        <div class="pub-img">
+            <img src="static/bkm.png" class="pub-icon">
         </div>
     </div>
 
@@ -128,18 +143,28 @@
             <b class="pub-title">Trapdoor Hash Functions and Their Applicatoins</b> <br>
             <i class="pub-subtitle"> with Nico D&ouml;ttling, Sanjam Garg, Yuval Ishai, Giulio Malavolta and Rafail Ostrovsky, appearead in CRYPTO'19</i><br>
         </div>
-        <div class="pub-icon">
+        <div class="pub-img">
 
         </div>
     </div>
 
     <div class="pub">
         <div class="pub-text">
-            <b class="pub-title">Distributed Oblivious RAM with Small Block Size</b> <br>
+            <b class="pub-title">New Efficient Constructions for Distributed Oblivious RAM</b> <br>
             <i class="pub-subtitle"> with Eyal Kushilevitz, appeared in PKC'19</i><br>
+            <p class="pub-abstract">
+                Imagine you want to prove a computational statement over some secret 
+                (e.g. a password) without leaking any information about the secret. You also want
+                to do so by sending a <q>one-shot proof</q><span id="dots-km">... </span><span id="more-km" class="more">, without any interaction with a verifier.
+                Non-interactive zero knowledge (NIZK) proofs are the tool to accomplish this cryptographic
+                task. In this work, we <q>lower the bar</q> for the cryptographic structure needed to
+                build NIZKs. Specifically, we build such proofs where security is based on the LPN and
+                DDH assumptions, which encompass much weaker structure than the assumptions known to imply
+                NIZKs before, e.g. LWE, QR or Factoring.</span><a href="javascript:more('km')" id="myBtn-km"> more</a>
+            </p>
         </div>
-        <div class="pub-icon">
-
+        <div class="pub-img">
+            <img src="static/km.png" class="pub-icon">
         </div>
     </div>
 </body>
