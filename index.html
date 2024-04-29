@@ -8,10 +8,28 @@
         padding-top:10px;
         max-width:600px;
     }
+    .title {
+        font-size: 35px;
+        text-align: center;
+        padding: 10px;
+    }
     .section-title {
         font-size: 20px;
         text-align: center;
         padding: 10px;
+    }
+    .profile-text {
+        margin-left: 30px;
+        width: 70%;
+    }
+    .profile {
+        display: flex;
+    }
+    .profile-img {
+        width: 20%;
+    }
+    .profile-pic {
+        max-width: 100%;
     }
     .pub {
         display: flex;
@@ -65,17 +83,36 @@
     </script>
 </head>
 <body>
-    <div>
-        Hi! <br>
-        I am a postdoctoral researcher in computer science at the CIFRA lab at Bocconi University, hosted by Prof. Alon Rosen. <br><br>
 
-        I recently obtained my PhD from the Weizmann Institute of Science under the supervision of Prof. Zvika Brakreski.
-        Before that, I  have received my Matser's degree in Technion, under the supervision of Prof. Eyal Kushilevitz. <br><br>
+    <div class="title">
+        <b> Tamer Mour's Homepage </b><br>
+        <span style="font-size: 15px;">Last updated: April 29, 2024</span>
+    </div>
+    <hr>
 
-        Despite cryptography being my main focus in my graduate studies, I am generally interested in modelling and solving problems that arise in societal interactions, via theoretical computer science and math. <br>
+    <div class="profile">
+        <div class="profile-img">
+            <img src="static/profile-pic.png" class="profile-pic">
+        </div>
+        <div class="profile-text">
+            <b> Academic Profile </b><br>
+            I am a postdoctoral researcher in computer science at the CIFRA lab at Bocconi University, hosted by Prof. Alon Rosen. <br><br>
+
+            I recently obtained my PhD from the Weizmann Institute of Science under the supervision of Prof. Zvika Brakreski.
+            Before that, I received my Matser's degree in Technion, under the supervision of Prof. Eyal Kushilevitz. <br><br>
+
+            Despite cryptography being my main focus in my graduate studies, I am generally interested in modelling and solving problems that arise in societal interactions, via theoretical computer science and math. <br><br>
+            
+            <a href="./cv.pdf">cv.pdf</a> | e-mail: [firstname].[lastname]@unibocconi.it
+        </div>
     </div>
 
-    <div class="section-title"> <b> Research Work </b> </div>
+    <hr>
+
+    <div class="section-title">
+        <b> Research Work </b><br>
+        <span style="font-size: 15px;">Chronological order, see also my <a href="https://dblp.org/pid/215/4408.html">dblp</a> or <a href="https://scholar.google.com/citations?user=bkXNq-UAAAAJ&hl=en">Google Scholar</a> page.</span>
+    </div>
 
     <div class="pub">
         <div class="pub-text">
@@ -110,7 +147,7 @@
                 hash functions, i.e. functions under which it is hard to find two colliding inputs.
                 </span><a href="javascript:more('dm')" id="myBtn-dm"> more</a>
             </p>
-            <a href="https://eprint.iacr.org/2023/1365">Paper</a> | Talk
+            <a href="https://eprint.iacr.org/2023/1365">Paper</a> | <a href="https://youtu.be/ipNQIl95ep0?si=mUqLgI5XfOh7TCAH">Talk</a>
         </div>
         <div class="pub-img">
             <img src="static/dm.png" class="pub-icon">
@@ -131,7 +168,7 @@
                 DDH assumptions, which encompass much weaker structure than the assumptions known to imply
                 NIZKs before, e.g. LWE, QR or Factoring.</span><a href="javascript:more('bkm')" id="myBtn-bkm"> more</a>
             </p>
-            <a href="https://eprint.iacr.org/2020/258">Paper</a> | Talk
+            <a href="https://eprint.iacr.org/2020/258">Paper</a> | <a href="https://youtu.be/VID_4W24BS4?si=4nwzf8aOBCoJ0IDf">Short Talk</a> | <a href="https://youtu.be/wCVR3dWDBB4?si=2WEu674TEr8ZPEfO">Long Talk</a>
         </div>
         <div class="pub-img">
             <img src="static/bkm.png" class="pub-icon">
@@ -140,11 +177,17 @@
 
     <div class="pub">
         <div class="pub-text">
-            <b class="pub-title">Trapdoor Hash Functions and Their Applicatoins</b> <br>
+            <b class="pub-title">Trapdoor Hash Functions and Their Applications</b> <br>
             <i class="pub-subtitle"> with Nico D&ouml;ttling, Sanjam Garg, Yuval Ishai, Giulio Malavolta and Rafail Ostrovsky, appearead in CRYPTO'19</i><br>
+            <p>
+                One of the main goals in the design of secure computation protocols is to reduce the communication cost needed for privacy. In<span id="dots-dgimmo">... </span><span id="more-dgimmo" class="more">
+                this work, we introduce a new cryptographic building block, which we call trapdoor hash functions, that allows to build communication-efficient
+                protocols for prominent cryptographic functionalities, e.g. oblivious transfer and private information retreival.</span><a href="javascript:more('dgimmo')" id="myBtn-dgimmo"> more</a>
+            </p>
+            <a href="https://eprint.iacr.org/2019/639.pdf">Paper</a> | <a href="https://youtu.be/plvBmEnxCHQ?si=pUDHTHun72iH-lIG">Talk</a>
         </div>
         <div class="pub-img">
-
+            <img src="static/dgimmo.png" class="pub-icon">
         </div>
     </div>
 
@@ -153,15 +196,12 @@
             <b class="pub-title">New Efficient Constructions for Distributed Oblivious RAM</b> <br>
             <i class="pub-subtitle"> with Eyal Kushilevitz, appeared in PKC'19</i><br>
             <p class="pub-abstract">
-                Imagine you want to prove a computational statement over some secret 
-                (e.g. a password) without leaking any information about the secret. You also want
-                to do so by sending a <q>one-shot proof</q><span id="dots-km">... </span><span id="more-km" class="more">, without any interaction with a verifier.
-                Non-interactive zero knowledge (NIZK) proofs are the tool to accomplish this cryptographic
-                task. In this work, we <q>lower the bar</q> for the cryptographic structure needed to
-                build NIZKs. Specifically, we build such proofs where security is based on the LPN and
-                DDH assumptions, which encompass much weaker structure than the assumptions known to imply
-                NIZKs before, e.g. LWE, QR or Factoring.</span><a href="javascript:more('km')" id="myBtn-km"> more</a>
+                Consider the problem of privately outsourcing a database to remote server(s). While encryption can be used
+                to hide the data itself, one must use oblivious RAM to hide the access pattern to the data. In this<span id="dots-km">... </span><span id="more-km" class="more"> work, we
+                make progress in constructing efficient oblivious RAM protocols where the database is stored in two or more
+                servers.</span><a href="javascript:more('km')" id="myBtn-km"> more</a>
             </p>
+            <a href="https://www.iacr.org/archive/pkc2019/114420180/114420180.pdf">Paper</a>
         </div>
         <div class="pub-img">
             <img src="static/km.png" class="pub-icon">
