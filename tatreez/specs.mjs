@@ -5,7 +5,7 @@ export const CROSS_WIDTH = 20;
 export const CROSS_HEIGHT = 20;
 
 // Resources
-export const ATOMS_SRC_FOLDER = "../assets/atoms";
+export const ATOMS_SRC_FOLDER = "./assets/atoms";
 export const ATOMS_METADATA_FILENAME = "metadata.json";
 
 // Parameters
