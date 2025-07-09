@@ -86,7 +86,7 @@
 
     <div class="title">
         <b> Tamer Mour's Homepage </b><br>
-        <span style="font-size: 15px;">Last updated: April 15, 2025</span>
+        <span style="font-size: 15px;">Last updated: July 9, 2025</span>
     </div>
     <hr>
 
@@ -120,6 +120,27 @@
 
     <div class="pub">
         <div class="pub-text">
+            <b class="pub-title">Tree PCPs</b> <br>
+            <i class="pub-subtitle"> with Alon Rosen and Ron Rothblum</i><br>
+            <p class="pub-abstract">
+                Consider an enormous computational task carried across multiple generations
+                (e.g the mathematical corpus produced by humanity or, simply, a ledger of some blockchain).
+                Is it possible to quickly<span id="dots-mrr2">... </span><span id="more-mrr2" class="more"> verify that the current generation’s computation state is correct?
+                Using a probabilistically checkable proof (PCP), it is possible to encode computations so that
+                at any later point one can quickly verify their correctness. In traditional PCPs, however, adding
+                a new step in the computation requires regenerating the encoding from scratch. We introduce <i>tree PCPs</i>:
+                these are PCPs that can be incrementally generated, one step at a time, and quickly verified at any point along the way.
+                </span><a href="javascript:more('mrr2')" id="myBtn-mrr2"> more</a>
+            </p>
+            <a href="./static/papers/mrr2.pdf">Paper</a>
+        </div>
+        <div class="pub-img">
+            <img src="static/icons/mrr2.png" class="pub-icon">
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
             <b class="pub-title">How to Verify that a Small Device is Quantum, Unconditionally</b> <br>
             <i class="pub-subtitle"> with Giulio Malavolta</i><br>
             <p class="pub-abstract">
@@ -133,6 +154,24 @@
         </div>
         <div class="pub-img">
             <img src="static/icons/mm.png" class="pub-icon">
+        </div>
+    </div>
+
+    <div class="pub">
+        <div class="pub-text">
+            <b class="pub-title">Encrypted Matrix-Vector Products from Secret Dual Codes</b> <br>
+            <i class="pub-subtitle"> with Fabrice Benhamouda, Caicai Chen, Shai Halevi, Yuval Ishai, Hugo Krawczyk, Tal Rabin and Alon Rosen, to appear in CCS'25</i><br>
+            <p class="pub-abstract">
+                We extend the theoretical framework from our work on sk-PIR (below) and demonstrate its practical efficiency for privately computing<span id="dots-bchikmrr">... </span><span id="more-bchikmrr" class="more"> matrix-vector products. 
+                Here, a database consisting of many rows is encrypted and outsourced to a server. The client wants to compute the inner product of some input vector of his with all
+                rows. We implement a family of secure and practical protocols achieving this goal, based on LSN assumptions. Matrix-vector products constitute an elementary component in many computational applications,
+                including nearest-neighbor search and inference, which are becoming more prominent with the rise of machine learning applications.
+                </span><a href="javascript:more('bchikmrr')" id="myBtn-bchikmrr"> more</a>
+            </p>
+            <a href="./static/papers/bchikmrr.pdf">Paper</a>
+        </div>
+        <div class="pub-img">
+            <img src="static/icons/bchikmrr.png" class="pub-icon">
         </div>
     </div>
 
@@ -162,7 +201,7 @@
     <div class="pub">
         <div class="pub-text">
             <b class="pub-title">A New World in The Depths of Microcrypt: Separating OWSG and Quantum Money from QEFID</b> <br>
-            <i class="pub-subtitle"> with Amit Behara, Giulio Malavolta, Tomoyuki Morimae and Takashi Yamakawa, to appear in EUROCRYPT'25</i><br>
+            <i class="pub-subtitle"> with Amit Behara, Giulio Malavolta, Tomoyuki Morimae and Takashi Yamakawa, appeared in EUROCRYPT'25</i><br>
             <p class="pub-abstract">
                 While we know that OWFs are <i>the</i> minimal assumption <span id="dots-bmmmy">... </span><span id="more-bmmmy" class="more"> underlying classical cryptography, the search for a minimal assumption in quantum cryptography, i.e. in Microcrypt,
                 has been troubling researchers in the field. Although many candidates have been proposed, a definite answer is still out of reach, and the relation between the various contenders is unclear.
@@ -243,9 +282,9 @@
         <div class="pub-text">
             <b class="pub-title">Trapdoor Hash Functions and Their Applications</b> <br>
             <i class="pub-subtitle"> with Nico D&ouml;ttling, Sanjam Garg, Yuval Ishai, Giulio Malavolta and Rafail Ostrovsky, appearead in CRYPTO'19</i><br>
-            <p>
-                One of the main goals in the design of secure computation protocols is to reduce the communication cost needed for privacy. In<span id="dots-dgimmo">... </span><span id="more-dgimmo" class="more">
-                this work, we introduce a new cryptographic building block, which we call trapdoor hash functions, that allows to build communication-efficient
+            <p class="pub-abstract">
+                One of the main goals in the design of secure computation protocols is to reduce the communication cost needed for privacy. In this<span id="dots-dgimmo">... </span><span id="more-dgimmo" class="more">
+                work, we introduce a new cryptographic building block, which we call trapdoor hash functions, that allows to build communication-efficient
                 protocols for prominent cryptographic functionalities, e.g. oblivious transfer and private information retreival.</span><a href="javascript:more('dgimmo')" id="myBtn-dgimmo"> more</a>
             </p>
             <a href="https://eprint.iacr.org/2019/639.pdf">Paper</a> | <a href="https://youtu.be/plvBmEnxCHQ?si=pUDHTHun72iH-lIG">Talk</a>
