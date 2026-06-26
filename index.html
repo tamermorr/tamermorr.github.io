@@ -101,7 +101,7 @@
             <!--
             I am looking for enthusiastic postdocs with relevant background to join the lab. Apply <a href="https://ai4i.it/postdoctoral-position-in-cryptography-for-machine-learning/"> here </a> if you are interested and feel free to email me for any questions.  <br><br>
             -->
-            
+
             Before joining AI4I, I was a postdoctoral researcher at <a href="https://rosenalon.github.io/cifra/">CIFRA lab at Bocconi University</a>, hosted by <a href="https://www.alonrosen.net/">Prof. Alon Rosen</a>.
             I obtained my PhD from the Weizmann Institute of Science under the supervision of <a href="https://zvikab.bitbucket.io/">Prof. Zvika Brakreski</a>.
             Before that, I received my Master's degree in Technion, under the supervision of <a href="https://csaws.cs.technion.ac.il/~eyalk/">Prof. Eyal Kushilevitz</a>. <br><br>
@@ -147,19 +147,24 @@
 
     <div class="pub">
         <div class="pub-text">
-            <b class="pub-title">How to Verify that a Small Device is Quantum, Unconditionally</b> <br>
-            <i class="pub-subtitle"> with Giulio Malavolta, appeared in TCC'25</i><br>
+            <b class="pub-title">Secret-Key PIR from Random Linear Codes</b> <br>
+            <i class="pub-subtitle"> with Caicai Chen, Yuval Ishai and Alon Rosen, appeared in STOC'26</i><br>
             <p class="pub-abstract">
-                A proof of quantumness (PoQ) is an experiment for testing if a computer device is quantum. 
-                We design PoQ experiments that are sound as long as the device is not too big, i.e. is bounded in space.<span id="dots-mm">.. </span><span id="more-mm" class="more">
-                The experiment can be carried by an efficient classical tester and, unlike existing PoQs, does not rely 
-                on cryptographic assumptions. 
-                 </span><a href="javascript:more('mm')" id="myBtn-mm"> more</a>
+                Private information retrieval (PIR) is a protocol for accessing a remote database
+                without revealing the locations that are accessed, even to the server holding the database.
+                We introduce a new family of PIR<span id="dots-cimr">... </span><span id="more-cimr" class="more">
+                protocols in a model where the client is allowed to
+                pre-process the database and use a secret key to access it privately. We obtain protocols that
+                are extremely efficient, approaching the efficiency of trivial (non-private) database access in
+                many important metrics, making them a great candidate for potential practical solutions. The security
+                of our protocols is based on a family of intriguing hard problems which we call <i>learning subspace with noise (LSN)</i>,
+                that involve learning a hidden linear code given noisy random codewords.                            
+                 </span><a href="javascript:more('cimr')" id="myBtn-cimr"> more</a>
             </p>
-            <a href="https://eprint.iacr.org/2025/970.pdf">Paper</a>
+            <a href="https://eprint.iacr.org/2025/646.pdf">Paper</a> | <a href="https://www.youtube.com/watch?v=iKGANOZiGgw">Talk (by Yuval)</a>
         </div>
         <div class="pub-img">
-            <img src="static/icons/mm.png" class="pub-icon">
+            <img src="static/icons/cimr.png" class="pub-icon">
         </div>
     </div>
 
@@ -183,24 +188,19 @@
 
     <div class="pub">
         <div class="pub-text">
-            <b class="pub-title">Secret-Key PIR from Random Linear Codes</b> <br>
-            <i class="pub-subtitle"> with Caicai Chen, Yuval Ishai and Alon Rosen, to appear in STOC'26</i><br>
+            <b class="pub-title">How to Verify that a Small Device is Quantum, Unconditionally</b> <br>
+            <i class="pub-subtitle"> with Giulio Malavolta, appeared in TCC'25</i><br>
             <p class="pub-abstract">
-                Private information retrieval (PIR) is a protocol for accessing a remote database
-                without revealing the locations that are accessed, even to the server holding the database.
-                We introduce a new family of PIR<span id="dots-cimr">... </span><span id="more-cimr" class="more">
-                protocols in a model where the client is allowed to
-                pre-process the database and use a secret key to access it privately. We obtain protocols that
-                are extremely efficient, approaching the efficiency of trivial (non-private) database access in
-                many important metrics, making them a great candidate for potential practical solutions. The security
-                of our protocols is based on a family of intriguing hard problems which we call <i>learning subspace with noise (LSN)</i>,
-                that involve learning a hidden linear code given noisy random codewords.                            
-                 </span><a href="javascript:more('cimr')" id="myBtn-cimr"> more</a>
+                A proof of quantumness (PoQ) is an experiment for testing if a computer device is quantum. 
+                We design PoQ experiments that are sound as long as the device is not too big, i.e. is bounded in space.<span id="dots-mm">.. </span><span id="more-mm" class="more">
+                The experiment can be carried by an efficient classical tester and, unlike existing PoQs, does not rely 
+                on cryptographic assumptions. 
+                 </span><a href="javascript:more('mm')" id="myBtn-mm"> more</a>
             </p>
-            <a href="https://eprint.iacr.org/2025/646.pdf">Paper</a> | <a href="https://www.youtube.com/watch?v=iKGANOZiGgw">Talk (by Yuval)</a>
+            <a href="https://eprint.iacr.org/2025/970.pdf">Paper</a>
         </div>
         <div class="pub-img">
-            <img src="static/icons/cimr.png" class="pub-icon">
+            <img src="static/icons/mm.png" class="pub-icon">
         </div>
     </div>
 
