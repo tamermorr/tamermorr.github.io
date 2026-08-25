@@ -31,28 +31,35 @@
     .profile-pic {
         max-width: 100%;
     }
-    .pub {
-        display: flex;
+    .research {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+        grid-template-areas:
+            "text img"
+            "pubs pubs";
         border: 1px solid black;
         margin-bottom: 5px;
     }
-    .pub>div{
+    .research>div{
         margin: 10px;
     }
-    .pub-text {
-        width: 75%;
+    .research-text {
+        grid-area: text;
     }
-    .pub-subtitle {
+    .research-subtitle {
         font-size: 15px;
     }
-    .pub-abstract {
+    .research-abstract {
         font-size: 15px;
         text-indent: 10px;
     }
-    .pub-img {
-        width: 20%;
+    .research-img {
+        grid-area: img;
     }
-    .pub-icon {
+    .research-pubs {
+        grid-area: pubs;
+    }
+    .research-icon {
         max-width: 100%;
     }
     .more {display: none;}
@@ -121,199 +128,152 @@
 
     <div class="section-title">
         <b> Research Work </b><br>
-        <span style="font-size: 15px;">Reverse chronological order. See also my <a href="https://dblp.org/pid/215/4408.html">dblp</a> or <a href="https://scholar.google.com/citations?user=bkXNq-UAAAAJ&hl=en">Google Scholar</a> page.</span>
+        <span style="font-size: 15px;">See my <a href="https://dblp.org/pid/215/4408.html">dblp</a> or <a href="https://scholar.google.com/citations?user=bkXNq-UAAAAJ&hl=en">Google Scholar</a> pages for a complete and ordered list of publications.</span>
     </div>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Tree PCPs</b> <br>
-            <i class="pub-subtitle"> with Alon Rosen and Ron Rothblum</i><br>
-            <p class="pub-abstract">
-                Consider an enormous computational task carried across multiple generations
-                (e.g the mathematical corpus produced by humanity or, simply, a ledger of some blockchain).
-                Is it possible to quickly<span id="dots-mrr2">... </span><span id="more-mrr2" class="more"> verify that the current generation’s computation state is correct?
-                Using a probabilistically checkable proof (PCP), it is possible to encode computations so that
-                at any later point one can quickly verify their correctness. In traditional PCPs, however, adding
-                a new step in the computation requires regenerating the encoding from scratch. We introduce <i>tree PCPs</i>:
-                these are PCPs that can be incrementally generated, one step at a time, and quickly verified at any point along the way.
-                </span><a href="javascript:more('mrr2')" id="myBtn-mrr2"> more</a>
+    <div class="research">
+        <div class="research-text">
+            <b class="research-title">Fast Cryptography from New Assumptions</b> <br>
+            <p class="research-abstract">
+                Advanced cryptographic solutions based on standard hardness assumptions are often far from practical. Fully homomorphic encryption is a striking example, but even simpler tools for private computation can impose prohibitive computation, communication, or storage costs.
+                In this line of work, we seek practical solutions, even at the cost of relying on new hardness assumptions.<span id="dots-fast-crypto">... </span><span id="more-fast-crypto" class="more">
+                This leads to promising and highly efficient tools for secret-key private information retrieval (sk-PIR), enabling private access to remote data, and encrypted matrix-vector products (EMVP), with applications to private AI inference.
+                Our constructions rely on learning subspace with noise (LSN) assumptions, which postulate that samples drawn from a linear subspace look random when they are obfuscated with noise. </span><a href="javascript:more('fast-crypto')" id="myBtn-fast-crypto"> more</a>
             </p>
-            <a href="./static/papers/mrr2.pdf">Paper</a> | <a href="https://www.youtube.com/watch?v=fek-i6km_z4">Talk</a>
         </div>
-        <div class="pub-img">
-            <img src="static/icons/mrr2.png" class="pub-icon">
+        <div class="research-pubs">
+
+            &#8227; Secret-Key PIR from Random Linear Codes,
+            <i> with C. Chen, Y. Ishai and A. Rosen, STOC'26.</i>
+            <a href="https://eprint.iacr.org/2025/646.pdf">Paper</a> |
+            <a href="https://www.youtube.com/watch?v=iKGANOZiGgw">Talk (by Yuval)</a>.<br>
+
+            &#8227; Encrypted Matrix-Vector Products from Secret Dual Codes,
+            <i> with F. Benhamouda, C. Chen, S. Halevi, Y. Ishai, H. Krawczyk, T. Rabin and A. Rosen, CCS'25.</i>
+            <a href="https://eprint.iacr.org/2025/858.pdf">Paper</a> |
+            <a href="https://www.youtube.com/watch?v=iKGANOZiGgw">Talk (by Yuval)</a>.<br>
+
+            &#8227; Doubly-Efficient Secret-Key PIR with Low Storage Overhead,
+            <i> with C. Chen, Y. Ishai, A. Jain, A. Rosen and C. Xing, Preprint.</i>
+            <a href="https://eprint.iacr.org/2026/1480.pdf">Paper</a>.<br>
+
+        </div>
+        <div class="research-img">
+            <img src="static/icons/cimr.png" class="research-icon">
         </div>
     </div>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Secret-Key PIR from Random Linear Codes</b> <br>
-            <i class="pub-subtitle"> with Caicai Chen, Yuval Ishai and Alon Rosen, appeared in STOC'26</i><br>
-            <p class="pub-abstract">
-                Private information retrieval (PIR) is a protocol for accessing a remote database
-                without revealing the locations that are accessed, even to the server holding the database.
-                We introduce a new family of PIR<span id="dots-cimr">... </span><span id="more-cimr" class="more">
-                protocols in a model where the client is allowed to
-                pre-process the database and use a secret key to access it privately. We obtain protocols that
-                are extremely efficient, approaching the efficiency of trivial (non-private) database access in
-                many important metrics, making them a great candidate for potential practical solutions. The security
-                of our protocols is based on a family of intriguing hard problems which we call <i>learning subspace with noise (LSN)</i>,
-                that involve learning a hidden linear code given noisy random codewords.                            
-                 </span><a href="javascript:more('cimr')" id="myBtn-cimr"> more</a>
+    <div class="research">
+        <div class="research-text">
+            <b class="research-title">Encoding Information and Computation, Incrementally and Verifiably</b> <br>
+            <p class="research-abstract">
+                Imagine an enormous computational task carried across multiple generations (e.g the mathematical corpus produced by humanity or, simply, a ledger of some blockchain).
+                Is it possible to quickly verify that the current generation’s computation state is correct?<span id="dots-tree-codes">... </span><span id="more-tree-codes" class="more">
+
+                Using a traditional probabilistically checkable proof (PCP), it is possible to encode computations so that at any later point one can quickly verify their correctness.
+                However, adding a new step in the computation requires regenerating the encoding from scratch.
+
+                We introduce tree PCPs: these are PCPs that can be incrementally generated, one step at a time, and quickly verified at any point along the way.
+
+                Analogously to standard PCPs that build on locally testable codes, tree PCPs build on our new notion of locally testable tree codes, which allows information to be incrementally encoded, while efficiently tested for corruption.
+                </span><a href="javascript:more('tree-codes')" id="myBtn-tree-codes"> more</a>
             </p>
-            <a href="https://eprint.iacr.org/2025/646.pdf">Paper</a> | <a href="https://www.youtube.com/watch?v=iKGANOZiGgw">Talk (by Yuval)</a>
         </div>
-        <div class="pub-img">
-            <img src="static/icons/cimr.png" class="pub-icon">
+        <div class="research-pubs">
+
+            &#8227; Locally Testable Tree Codes,
+            <i> with A. Rosen and R. Rothblum, SODA'25.</i>
+            <a href="./static/papers/mrr.pdf">Paper</a>.<br>
+
+            &#8227; Tree PCPs,
+            <i> with A. Rosen and R. Rothblum, Preprint.</i>
+            <a href="./static/papers/mrr2.pdf">Paper</a> |
+            <a href="https://www.youtube.com/watch?v=fek-i6km_z4">Talk</a>.<br>
+        </div>
+        <div class="research-img">
+            <img src="static/icons/mrr.png" class="research-icon">
         </div>
     </div>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Encrypted Matrix-Vector Products from Secret Dual Codes</b> <br>
-            <i class="pub-subtitle"> with Fabrice Benhamouda, Caicai Chen, Shai Halevi, Yuval Ishai, Hugo Krawczyk, Tal Rabin and Alon Rosen, appeared in CCS'25</i><br>
-            <p class="pub-abstract">
-                We extend the theoretical framework from our work on sk-PIR (below) and demonstrate its practical efficiency for privately computing<span id="dots-bchikmrr">... </span><span id="more-bchikmrr" class="more"> matrix-vector products. 
-                Here, a database consisting of many rows is encrypted and outsourced to a server. The client wants to compute the inner product of some input vector of his with all
-                rows. We implement a family of secure and practical protocols achieving this goal, based on LSN assumptions. Matrix-vector products constitute an elementary component in many computational applications,
-                including nearest-neighbor search and inference, which are becoming more prominent with the rise of machine learning applications.
-                </span><a href="javascript:more('bchikmrr')" id="myBtn-bchikmrr"> more</a>
-            </p>
-            <a href="https://eprint.iacr.org/2025/858.pdf">Paper</a> | <a href="https://www.youtube.com/watch?v=iKGANOZiGgw">Talk (by Yuval)</a>
-        </div>
-        <div class="pub-img">
-            <img src="static/icons/bchikmrr.png" class="pub-icon">
-        </div>
-    </div>
-
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">How to Verify that a Small Device is Quantum, Unconditionally</b> <br>
-            <i class="pub-subtitle"> with Giulio Malavolta, appeared in TCC'25</i><br>
-            <p class="pub-abstract">
+    <div class="research">
+        <div class="research-text">
+            <b class="research-title">Unconditional Proofs of Quantumness</b> <br>
+            <p class="research-abstract">
                 A proof of quantumness (PoQ) is an experiment for testing if a computer device is quantum. 
-                We design PoQ experiments that are sound as long as the device is not too big, i.e. is bounded in space.<span id="dots-mm">.. </span><span id="more-mm" class="more">
-                The experiment can be carried by an efficient classical tester and, unlike existing PoQs, does not rely 
-                on cryptographic assumptions. 
-                 </span><a href="javascript:more('mm')" id="myBtn-mm"> more</a>
+                We design PoQ experiments that are sound as long as the device is not too big, i.e. bounded in space.
+                The experiment can be carried out by an efficient classical tester and, unlike existing PoQs, does not rely 
+                on cryptographic assumptions.
             </p>
-            <a href="https://eprint.iacr.org/2025/970.pdf">Paper</a>
         </div>
-        <div class="pub-img">
-            <img src="static/icons/mm.png" class="pub-icon">
+        <div class="research-pubs">
+
+            &#8227; How to Verify that a Small Device is Quantum, Unconditionally,
+            <i> with G. Malavolta, TTC'25.</i>
+            <a href="https://eprint.iacr.org/2025/970.pdf">Paper</a>.<br>
+        </div>
+        <div class="research-img">
+            <img src="static/icons/mm.png" class="research-icon">
         </div>
     </div>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">A New World in The Depths of Microcrypt: Separating OWSG and Quantum Money from QEFID</b> <br>
-            <i class="pub-subtitle"> with Amit Behara, Giulio Malavolta, Tomoyuki Morimae and Takashi Yamakawa, appeared in EUROCRYPT'25</i><br>
-            <p class="pub-abstract">
-                While we know that OWFs are <i>the</i> minimal assumption <span id="dots-bmmmy">... </span><span id="more-bmmmy" class="more"> underlying classical cryptography, the search for a minimal assumption in quantum cryptography, i.e. in Microcrypt,
-                has been troubling researchers in the field. Although many candidates have been proposed, a definite answer is still out of reach, and the relation between the various contenders is unclear.
-                 In this work, we shed light on the relation between two of the more prominent candidates: OWSGs and QEFIDs, suggesting
-                the existence of further heirarchy inside Microcrypt. In particular, we show that average-case problems, with quantum instance and classical solution, become easier in some sense when
-                the solution is efficiently verifiable.
-                 </span><a href="javascript:more('bmmmy')" id="myBtn-bmmmy"> more</a>
+    <div class="research">
+        <div class="research-text">
+            <b class="research-title">Black-Box Complexity of Cryptographic Primitives</b> <br>
+            <p class="research-abstract">
+                A rich theory of cryptography has put forth various cryptographic primitives and hardness notions.
+                A central goal is to understand the relationships among these primitives through their black-box complexity:
+                which primitives can, or cannot, be built from simpler ones?<span id="dots-black-box">... </span><span id="more-black-box" class="more">
+                My work addresses instances of this question in both classical and quantum cryptography. In the classical setting, it investigates the relationship between correlation intractability (a notion central to non-interactive proof systems) and fundamental primitives such as one-way functions and collision-resistant hash.
+                In the quantum setting, it seeks to untangle the relationship between two minimal notions of hardness: pseudorandomness and one-wayness, which are classically equivalent. </span><a href="javascript:more('black-box')" id="myBtn-black-box"> more</a>
             </p>
-            <a href="https://eprint.iacr.org/2024/1567.pdf">Paper</a> | <a href="https://www2.yukawa.kyoto-u.ac.jp/~tomoyuki.morimae/KyotoQcrypt/Tamer_talk.mp4">Talk</a>
         </div>
-        <div class="pub-img">
-            <img src="static/icons/bmmmy.png" class="pub-icon">
+        <div class="research-pubs">            
+            &#8227; The Black-Box Complexity of Correlation Intractability,</b>
+            <i> with N. D&ouml;ttling, ITCS'24.</i>
+            <a href="https://eprint.iacr.org/2023/1365">Paper</a> |
+            <a href="https://youtu.be/ipNQIl95ep0?si=mUqLgI5XfOh7TCAH">Talk</a>.<br>
+            
+            &#8227; A New World in The Depths of Microcrypt: Separating OWSG and Quantum Money from QEFID,
+            <i> with A. Behara, G. Malavolta, T. Morimae and T. Yamakawa, EUROCRYPT'25.</i>
+            <a href="https://eprint.iacr.org/2024/1567.pdf">Paper</a> |
+            <a href="https://www2.yukawa.kyoto-u.ac.jp/~tomoyuki.morimae/KyotoQcrypt/Tamer_talk.mp4">Talk</a>.<br>
+        </div>
+        <div class="research-img">
+            <img src="static/icons/bmmmy.png" class="research-icon">
         </div>
     </div>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Locally Testable Tree Codes</b> <br>
-            <i class="pub-subtitle"> with Alon Rosen and Ron Rothblum, appeared in SODA'25</i><br>
-            <p class="pub-abstract">
-                Suppose we wish to encode a huge amount of data that is created across
-                multiple generations. Each generation creates new information and we would 
-                like to encode it in an online manner into a<span id="dots-mrr">... </span><span id="more-mrr" class="more"> repository. We want 
-                the encoding to be such that we can still decode and retrieve the information
-                even if few errors happened along the way. Further, we want to be able to test
-                that the stored data is properly encoded by reading only a few locations in the
-                (potentially huge) repository. In this work, we build the first locally testable
-                tree codes, which offer a solution to such a scenario.</span><a href="javascript:more('mrr')" id="myBtn-mrr"> more</a>
+    <div class="research">
+        <div class="research-text">
+            <b class="research-title">Classic(al) Cryptography from Standard Assumptions</b> <br>
+            <p class="research-abstract">
+                A central goal in modern cryptography is to understand which advanced cryptographic tasks can be built from standard hardness assumptions, and how efficiently they can be realized:
+                what does it take to compute a function over private inputs, or prove knowledge of a secret?<span id="dots-classical-cryptography">... </span><span id="more-classical-cryptography" class="more">
+                My earlier work establishes new feasibility and asymptotic efficiency results for central problems in private computation (e.g. private information retrieval, oblivious transfer and oblivious RAM) and proof systems (non-interactive zero knowledge).
+                Some of these results resolve decades-old open questions and introduce techniques that have since found broader applications. </span><a href="javascript:more('classical-cryptography')" id="myBtn-classical-cryptography"> more</a>
             </p>
-            <a href="./static/papers/mrr.pdf">Paper</a>
         </div>
-        <div class="pub-img">
-            <img src="static/icons/mrr.png" class="pub-icon">
-        </div>
-    </div>
+        <div class="research-pubs">
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">The Black-Box Complexity of Correlation Intractability</b> <br>
-            <i class="pub-subtitle"> with Nico D&ouml;ttling, appeared in ITCS'24</i><br>
-            <p class="pub-abstract">
-                Correlation intractable hash functions are functions where it is hard to find an input-output pair satisfying
-                some desired correlation. Such functions are a central tool in communication-efficient<span id="dots-dm">... </span><span id="more-dm" class="more">
-                cryptographic protocols. In this work, we investigate the complexity of building correlation intractable hash functions from
-                basic cryptographic building blocks: one-way functions, i.e. functions that are hard to invert, or collision-resistant
-                hash functions, i.e. functions under which it is hard to find two colliding inputs.
-                </span><a href="javascript:more('dm')" id="myBtn-dm"> more</a>
-            </p>
-            <a href="https://eprint.iacr.org/2023/1365">Paper</a> | <a href="https://youtu.be/ipNQIl95ep0?si=mUqLgI5XfOh7TCAH">Talk</a>
-        </div>
-        <div class="pub-img">
-            <img src="static/icons/dm.png" class="pub-icon">
-        </div>
-    </div>
+            &#8227; Trapdoor Hash Functions and Their Applications,</b>
+            <i> with N. D&ouml;ttling, S. Garg, Y. Ishai, G. Malavolta and R. Ostrovsky, CRYPTO'19.</i>
+            <a href="https://eprint.iacr.org/2019/639.pdf">Paper</a> |
+            <a href="https://youtu.be/plvBmEnxCHQ?si=pUDHTHun72iH-lIG">Talk</a>.<br> 
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Non-Interactive Zero Knowledge from LPN and Trapdoor Hash</b> <br>
-            <i class="pub-subtitle"> with Zvika Brakerski and Venkata Koppula, appeared in CRYPTO'20</i><br>
-            <p class="pub-abstract">
-                Imagine you want to prove a computational statement over some secret 
-                (e.g. a password) without leaking any information about the secret. You also want
-                to do so by sending a <q>one-shot proof</q><span id="dots-bkm">... </span><span id="more-bkm" class="more">, without any interaction with a verifier.
-                Non-interactive zero knowledge (NIZK) proofs are the tool to accomplish this cryptographic
-                task. In this work, we <q>lower the bar</q> for the cryptographic structure needed to
-                build NIZKs. Specifically, we build such proofs where security is based on the LPN and
-                DDH assumptions, which encompass much weaker structure than the assumptions known to imply
-                NIZKs before, e.g. LWE, QR or Factoring.</span><a href="javascript:more('bkm')" id="myBtn-bkm"> more</a>
-            </p>
-            <a href="https://eprint.iacr.org/2020/258">Paper</a> | <a href="https://youtu.be/VID_4W24BS4?si=4nwzf8aOBCoJ0IDf">Short Talk</a> | <a href="https://youtu.be/wCVR3dWDBB4?si=2WEu674TEr8ZPEfO">Long Talk</a>
-        </div>
-        <div class="pub-img">
-            <img src="static/icons/bkm.png" class="pub-icon">
-        </div>
-    </div>
+            &#8227; NIZK from LPN and Trapdoor Hash via Correlation Intractability for Approximable Relations,</b>
+            <i> with Z. Brakerski and V. Koppula, CRYPTO'20.</i>
+            <a href="https://eprint.iacr.org/2020/258.pdf">Paper</a> |
+            <a href="https://youtu.be/VID_4W24BS4?si=4nwzf8aOBCoJ0IDf">Short Talk</a> |
+            <a href="https://youtu.be/wCVR3dWDBB4?si=2WEu674TEr8ZPEfO">Long Talk</a>.<br> 
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Trapdoor Hash Functions and Their Applications</b> <br>
-            <i class="pub-subtitle"> with Nico D&ouml;ttling, Sanjam Garg, Yuval Ishai, Giulio Malavolta and Rafail Ostrovsky, appearead in CRYPTO'19</i><br>
-            <p class="pub-abstract">
-                One of the main goals in the design of secure computation protocols is to reduce the communication cost needed for privacy. In this<span id="dots-dgimmo">... </span><span id="more-dgimmo" class="more">
-                work, we introduce a new cryptographic building block, which we call trapdoor hash functions, that allows to build communication-efficient
-                protocols for prominent cryptographic functionalities, e.g. oblivious transfer and private information retreival.</span><a href="javascript:more('dgimmo')" id="myBtn-dgimmo"> more</a>
-            </p>
-            <a href="https://eprint.iacr.org/2019/639.pdf">Paper</a> | <a href="https://youtu.be/plvBmEnxCHQ?si=pUDHTHun72iH-lIG">Talk</a>
-        </div>
-        <div class="pub-img">
-            <img src="static/icons/dgimmo.png" class="pub-icon">
-        </div>
-    </div>
+            &#8227; New Efficient Constructions for Distributed Oblivious RAM,</b>
+            <i> with E. Kushilevitz, PKC'19.</i>
+            <a href="https://www.iacr.org/archive/pkc2019/114420180/114420180.pdf">Paper.</a><br>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">New Efficient Constructions for Distributed Oblivious RAM</b> <br>
-            <i class="pub-subtitle"> with Eyal Kushilevitz, appeared in PKC'19</i><br>
-            <p class="pub-abstract">
-                Consider the problem of privately outsourcing a database to remote server(s). While encryption can be used
-                to hide the data itself, one must use oblivious RAM to hide the access pattern to the data. In this<span id="dots-km">... </span><span id="more-km" class="more"> work, we
-                make progress in constructing efficient oblivious RAM protocols where the database is stored in two or more
-                servers.</span><a href="javascript:more('km')" id="myBtn-km"> more</a>
-            </p>
-            <a href="https://www.iacr.org/archive/pkc2019/114420180/114420180.pdf">Paper</a>
+
         </div>
-        <div class="pub-img">
-            <img src="static/icons/km.png" class="pub-icon">
+        <div class="research-img">
+            <img src="static/icons/cimr.png" class="research-icon">
         </div>
     </div>
 
@@ -321,21 +281,23 @@
         <b> Other Projects </b><br>
     </div>
 
-    <div class="pub">
-        <div class="pub-text">
-            <b class="pub-title">Tatreez</b> <br>
-            <i class="pub-subtitle"> with Sama Haddad and Shahd Issa</i><br>
-            <p class="pub-abstract">
+    <div class="research">
+        <div class="research-text">
+            <b class="research-title">Tatreez</b> <br>
+            <i class="research-subtitle"> with Sama Haddad and Shahd Issa</i><br>
+            <p class="research-abstract">
                 Tatreez is a prominent form of traditional Palestinian embroidery. In this project, we look into the beautiful
-                geometry in tatreez and build an algorithm that generates original tatreez peices. At every run<span id="dots-ttrz">...</span>
+                geometry in tatreez and build an algorithm that generates original tatreez pieces. At every run<span id="dots-ttrz">...</span>
                 <span id="more-ttrz" class="more">of the algorithm, a fresh random peice is produced, where different shapes and
-                new patterns appear. The algorithm thus gives birth to a never-ending collection of unique tatreez peices; some
+                new patterns appear. The algorithm thus gives birth to a never-ending collection of unique tatreez pieces; some
                 traditional-looking, some rather quirky, but all unpredictable!</span><a href="javascript:more('ttrz')" id="myBtn-ttrz"> more</a>
             </p>
+        </div>
+        <div class="research-pubs">
             <a href="./tatreez/tatreez.html">Try it yourself</a>
         </div>
-        <div class="pub-img">
-            <img src="static/icons/tatreez.png" class="pub-icon">
+        <div class="research-img">
+            <img src="static/icons/tatreez.png" class="research-icon">
         </div>
     </div>
 </body>

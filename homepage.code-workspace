@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"name": "webpage",
+			"path": "../lab-webpage/webpage"
+		}
+	],
+	"settings": {}
+}
